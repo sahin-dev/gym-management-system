@@ -7,6 +7,9 @@ import errorMiddleware from "./middlewares/error.middleware";
 const app = express()
 
 app.use(express.json())
+app.use('/', (req:Request, res:Response)=>{
+    res.status(200).json({message:"Service is working..."})
+})
 app.use('/api',routes)
 
 
