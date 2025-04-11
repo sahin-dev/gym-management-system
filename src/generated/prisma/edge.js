@@ -178,7 +178,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../../prisma",
@@ -188,18 +188,17 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": null
+        "value": "prisma+postgres://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiZjM4NjhjNjYtNDUwZS00YmM3LWE2ZDItNzNmNzIyNzUzNTMzIiwidGVuYW50X2lkIjoiODQ3MDQ3YWM4ZDViNGEzMzk4MjA2NTM4ODM0YWZkOTU0ZGQ5MTNmZTc4NzI5MTgyZDgyMGVlMzBmMTYzODRkMiIsImludGVybmFsX3NlY3JldCI6ImU1Mjc2ZTYwLWI0NmYtNDMyZi1iZjA4LTA5M2IwYjAyMmVlNSJ9.maeGaO-rHoNvG6qbJ73LZndEv2kDAhIeeVyQkQZchr4"
       }
     }
   },
   "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nenum Role {\n  ADMIN\n  TRAINER\n  TRAINEE\n}\n\nmodel User {\n  id        String   @id @default(uuid())\n  email     String   @unique\n  password  String\n  role      Role     @default(TRAINEE)\n  firstName String\n  lastName  String\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  classes  Class[]   @relation(\"TrainerClasses\")\n  bookings Booking[]\n}\n\nmodel Class {\n  id          String   @id @default(uuid())\n  name        String\n  description String?\n  duration    Int      @default(120)\n  maxCapacity Int      @default(10)\n  startTime   DateTime\n  endTime     DateTime\n  date        DateTime\n  trainer     User     @relation(\"TrainerClasses\", fields: [trainerId], references: [id])\n  trainerId   String\n  createdAt   DateTime @default(now())\n  updatedAt   DateTime @updatedAt\n\n  bookings Booking[]\n}\n\nmodel Booking {\n  id          String   @id @default(uuid())\n  user        User     @relation(fields: [userId], references: [id])\n  userId      String\n  class       Class    @relation(fields: [classId], references: [id])\n  classId     String\n  bookingDate DateTime @default(now())\n  status      String   @default(\"confirmed\")\n  createdAt   DateTime @default(now())\n  updatedAt   DateTime @updatedAt\n\n  @@unique([userId, classId])\n}\n",
   "inlineSchemaHash": "5b7a8b1052d29fd953bb97daba3ff7413fbe7f1b22d995d1bfb54e08d315d90c",
-  "copyEngine": true
+  "copyEngine": false
 }
 config.dirname = '/'
 
