@@ -2,7 +2,7 @@ import IError from "../interfaces/IError";
 import { ErrorResponse } from "../types/ErrorResponse";
 
 
-export class BookingLimitExceededError implements IError{
+export class ClassLimitExceedError implements IError{
     name: string;
     success: boolean;
     message: string;
@@ -10,7 +10,7 @@ export class BookingLimitExceededError implements IError{
    
 
     constructor( message:string){
-        this.name = "Booking Limit Exceed"
+        this.name = "Class Limit Exceed"
         this.success = false
         this.statusCode = 405
         this.message = message

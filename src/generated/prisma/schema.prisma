@@ -36,7 +36,6 @@ model User {
 
 model Class {
   id          String   @id @default(uuid())
-  name        String
   description String?
   duration    Int      @default(120)
   maxCapacity Int      @default(10)

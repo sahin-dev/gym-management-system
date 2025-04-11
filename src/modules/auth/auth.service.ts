@@ -13,12 +13,8 @@ export const handleLogin = async({email,password}:ILoginUser)=>{
     const passwordMatch = await bcrypt.compare(user.password, password)
     if (!passwordMatch){
         throw new ValidationError("Validation error occured!", 'password', 'password is not correct')
-
     }
+
     const token = jwt.sign({id:user.id,role:user.role}, process.env.JWT_SECRET as string, {expiresIn:'7d'})
-    return {success:true,statusCode:200,message:'logged in successfully',Data:
-        {
-            token:token,
-            user:{ id: user.id, firstName: user.firstName,lastName:user.lastName, email: user.email, role: user.role }
-        }}
+    return token
 }

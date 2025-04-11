@@ -2300,7 +2300,6 @@ export namespace Prisma {
 
   export type ClassMinAggregateOutputType = {
     id: string | null
-    name: string | null
     description: string | null
     duration: number | null
     maxCapacity: number | null
@@ -2314,7 +2313,6 @@ export namespace Prisma {
 
   export type ClassMaxAggregateOutputType = {
     id: string | null
-    name: string | null
     description: string | null
     duration: number | null
     maxCapacity: number | null
@@ -2328,7 +2326,6 @@ export namespace Prisma {
 
   export type ClassCountAggregateOutputType = {
     id: number
-    name: number
     description: number
     duration: number
     maxCapacity: number
@@ -2354,7 +2351,6 @@ export namespace Prisma {
 
   export type ClassMinAggregateInputType = {
     id?: true
-    name?: true
     description?: true
     duration?: true
     maxCapacity?: true
@@ -2368,7 +2364,6 @@ export namespace Prisma {
 
   export type ClassMaxAggregateInputType = {
     id?: true
-    name?: true
     description?: true
     duration?: true
     maxCapacity?: true
@@ -2382,7 +2377,6 @@ export namespace Prisma {
 
   export type ClassCountAggregateInputType = {
     id?: true
-    name?: true
     description?: true
     duration?: true
     maxCapacity?: true
@@ -2483,7 +2477,6 @@ export namespace Prisma {
 
   export type ClassGroupByOutputType = {
     id: string
-    name: string
     description: string | null
     duration: number
     maxCapacity: number
@@ -2516,7 +2509,6 @@ export namespace Prisma {
 
   export type ClassSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
     description?: boolean
     duration?: boolean
     maxCapacity?: boolean
@@ -2533,7 +2525,6 @@ export namespace Prisma {
 
   export type ClassSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
     description?: boolean
     duration?: boolean
     maxCapacity?: boolean
@@ -2548,7 +2539,6 @@ export namespace Prisma {
 
   export type ClassSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    name?: boolean
     description?: boolean
     duration?: boolean
     maxCapacity?: boolean
@@ -2563,7 +2553,6 @@ export namespace Prisma {
 
   export type ClassSelectScalar = {
     id?: boolean
-    name?: boolean
     description?: boolean
     duration?: boolean
     maxCapacity?: boolean
@@ -2575,7 +2564,7 @@ export namespace Prisma {
     updatedAt?: boolean
   }
 
-  export type ClassOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "description" | "duration" | "maxCapacity" | "startTime" | "endTime" | "date" | "trainerId" | "createdAt" | "updatedAt", ExtArgs["result"]["class"]>
+  export type ClassOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "description" | "duration" | "maxCapacity" | "startTime" | "endTime" | "date" | "trainerId" | "createdAt" | "updatedAt", ExtArgs["result"]["class"]>
   export type ClassInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     trainer?: boolean | UserDefaultArgs<ExtArgs>
     bookings?: boolean | Class$bookingsArgs<ExtArgs>
@@ -2596,7 +2585,6 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      name: string
       description: string | null
       duration: number
       maxCapacity: number
@@ -3032,7 +3020,6 @@ export namespace Prisma {
    */
   interface ClassFieldRefs {
     readonly id: FieldRef<"Class", 'String'>
-    readonly name: FieldRef<"Class", 'String'>
     readonly description: FieldRef<"Class", 'String'>
     readonly duration: FieldRef<"Class", 'Int'>
     readonly maxCapacity: FieldRef<"Class", 'Int'>
@@ -4602,7 +4589,6 @@ export namespace Prisma {
 
   export const ClassScalarFieldEnum: {
     id: 'id',
-    name: 'name',
     description: 'description',
     duration: 'duration',
     maxCapacity: 'maxCapacity',
@@ -4810,7 +4796,6 @@ export namespace Prisma {
     OR?: ClassWhereInput[]
     NOT?: ClassWhereInput | ClassWhereInput[]
     id?: StringFilter<"Class"> | string
-    name?: StringFilter<"Class"> | string
     description?: StringNullableFilter<"Class"> | string | null
     duration?: IntFilter<"Class"> | number
     maxCapacity?: IntFilter<"Class"> | number
@@ -4826,7 +4811,6 @@ export namespace Prisma {
 
   export type ClassOrderByWithRelationInput = {
     id?: SortOrder
-    name?: SortOrder
     description?: SortOrderInput | SortOrder
     duration?: SortOrder
     maxCapacity?: SortOrder
@@ -4845,7 +4829,6 @@ export namespace Prisma {
     AND?: ClassWhereInput | ClassWhereInput[]
     OR?: ClassWhereInput[]
     NOT?: ClassWhereInput | ClassWhereInput[]
-    name?: StringFilter<"Class"> | string
     description?: StringNullableFilter<"Class"> | string | null
     duration?: IntFilter<"Class"> | number
     maxCapacity?: IntFilter<"Class"> | number
@@ -4861,7 +4844,6 @@ export namespace Prisma {
 
   export type ClassOrderByWithAggregationInput = {
     id?: SortOrder
-    name?: SortOrder
     description?: SortOrderInput | SortOrder
     duration?: SortOrder
     maxCapacity?: SortOrder
@@ -4883,7 +4865,6 @@ export namespace Prisma {
     OR?: ClassScalarWhereWithAggregatesInput[]
     NOT?: ClassScalarWhereWithAggregatesInput | ClassScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Class"> | string
-    name?: StringWithAggregatesFilter<"Class"> | string
     description?: StringNullableWithAggregatesFilter<"Class"> | string | null
     duration?: IntWithAggregatesFilter<"Class"> | number
     maxCapacity?: IntWithAggregatesFilter<"Class"> | number
@@ -5051,7 +5032,6 @@ export namespace Prisma {
 
   export type ClassCreateInput = {
     id?: string
-    name: string
     description?: string | null
     duration?: number
     maxCapacity?: number
@@ -5066,7 +5046,6 @@ export namespace Prisma {
 
   export type ClassUncheckedCreateInput = {
     id?: string
-    name: string
     description?: string | null
     duration?: number
     maxCapacity?: number
@@ -5081,7 +5060,6 @@ export namespace Prisma {
 
   export type ClassUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     duration?: IntFieldUpdateOperationsInput | number
     maxCapacity?: IntFieldUpdateOperationsInput | number
@@ -5096,7 +5074,6 @@ export namespace Prisma {
 
   export type ClassUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     duration?: IntFieldUpdateOperationsInput | number
     maxCapacity?: IntFieldUpdateOperationsInput | number
@@ -5111,7 +5088,6 @@ export namespace Prisma {
 
   export type ClassCreateManyInput = {
     id?: string
-    name: string
     description?: string | null
     duration?: number
     maxCapacity?: number
@@ -5125,7 +5101,6 @@ export namespace Prisma {
 
   export type ClassUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     duration?: IntFieldUpdateOperationsInput | number
     maxCapacity?: IntFieldUpdateOperationsInput | number
@@ -5138,7 +5113,6 @@ export namespace Prisma {
 
   export type ClassUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     duration?: IntFieldUpdateOperationsInput | number
     maxCapacity?: IntFieldUpdateOperationsInput | number
@@ -5384,7 +5358,6 @@ export namespace Prisma {
 
   export type ClassCountOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
     description?: SortOrder
     duration?: SortOrder
     maxCapacity?: SortOrder
@@ -5403,7 +5376,6 @@ export namespace Prisma {
 
   export type ClassMaxOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
     description?: SortOrder
     duration?: SortOrder
     maxCapacity?: SortOrder
@@ -5417,7 +5389,6 @@ export namespace Prisma {
 
   export type ClassMinOrderByAggregateInput = {
     id?: SortOrder
-    name?: SortOrder
     description?: SortOrder
     duration?: SortOrder
     maxCapacity?: SortOrder
@@ -5855,7 +5826,6 @@ export namespace Prisma {
 
   export type ClassCreateWithoutTrainerInput = {
     id?: string
-    name: string
     description?: string | null
     duration?: number
     maxCapacity?: number
@@ -5869,7 +5839,6 @@ export namespace Prisma {
 
   export type ClassUncheckedCreateWithoutTrainerInput = {
     id?: string
-    name: string
     description?: string | null
     duration?: number
     maxCapacity?: number
@@ -5940,7 +5909,6 @@ export namespace Prisma {
     OR?: ClassScalarWhereInput[]
     NOT?: ClassScalarWhereInput | ClassScalarWhereInput[]
     id?: StringFilter<"Class"> | string
-    name?: StringFilter<"Class"> | string
     description?: StringNullableFilter<"Class"> | string | null
     duration?: IntFilter<"Class"> | number
     maxCapacity?: IntFilter<"Class"> | number
@@ -6120,7 +6088,6 @@ export namespace Prisma {
 
   export type ClassCreateWithoutBookingsInput = {
     id?: string
-    name: string
     description?: string | null
     duration?: number
     maxCapacity?: number
@@ -6134,7 +6101,6 @@ export namespace Prisma {
 
   export type ClassUncheckedCreateWithoutBookingsInput = {
     id?: string
-    name: string
     description?: string | null
     duration?: number
     maxCapacity?: number
@@ -6199,7 +6165,6 @@ export namespace Prisma {
 
   export type ClassUpdateWithoutBookingsInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     duration?: IntFieldUpdateOperationsInput | number
     maxCapacity?: IntFieldUpdateOperationsInput | number
@@ -6213,7 +6178,6 @@ export namespace Prisma {
 
   export type ClassUncheckedUpdateWithoutBookingsInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     duration?: IntFieldUpdateOperationsInput | number
     maxCapacity?: IntFieldUpdateOperationsInput | number
@@ -6227,7 +6191,6 @@ export namespace Prisma {
 
   export type ClassCreateManyTrainerInput = {
     id?: string
-    name: string
     description?: string | null
     duration?: number
     maxCapacity?: number
@@ -6249,7 +6212,6 @@ export namespace Prisma {
 
   export type ClassUpdateWithoutTrainerInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     duration?: IntFieldUpdateOperationsInput | number
     maxCapacity?: IntFieldUpdateOperationsInput | number
@@ -6263,7 +6225,6 @@ export namespace Prisma {
 
   export type ClassUncheckedUpdateWithoutTrainerInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     duration?: IntFieldUpdateOperationsInput | number
     maxCapacity?: IntFieldUpdateOperationsInput | number
@@ -6277,7 +6238,6 @@ export namespace Prisma {
 
   export type ClassUncheckedUpdateManyWithoutTrainerInput = {
     id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     duration?: IntFieldUpdateOperationsInput | number
     maxCapacity?: IntFieldUpdateOperationsInput | number
