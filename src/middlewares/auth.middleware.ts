@@ -28,6 +28,7 @@ export const authenticate = (req:AuthenticatedRequest, res:Response, next:NextFu
 
 export const authorize = (roles:string[])=>{
     return (req:AuthenticatedRequest,res:Response,next:NextFunction)=>{
+        console.log(req)
         if (!roles.includes(req.user.role)){
             throw new UnauthorizedAccessError("Authorization failed", "Permission denied!")
         }

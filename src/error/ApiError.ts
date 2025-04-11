@@ -13,6 +13,7 @@ export class ApiError implements IError{
         this.statusCode = statusCode
         this.errorDetails = errorDetails
     }
+    
     convertToResponse(): ErrorResponse {
         
         const errorResponse = {
