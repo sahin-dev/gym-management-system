@@ -1,4 +1,4 @@
-import app from "./src/app";
+import app from "../src/app";
 import { createServer } from "http";
 import dotenv from 'dotenv';
 
