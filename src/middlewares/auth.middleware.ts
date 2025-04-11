@@ -9,7 +9,7 @@ interface AuthenticatedRequest extends Request  {
 
 export const authenticate = (req:AuthenticatedRequest, res:Response, next:NextFunction)=>{
     try{
-        const token = req.header('Authorization')?.split('Bearer ')[1]
+        const token = req.header('Authorization')?.split(' ')[1]
         if (!token){
             throw new UnauthorizedAccessError("Authentication failed", "Token Invalid")
         }
