@@ -78,25 +78,25 @@ Password: Admin123!
 
 ## User(Admin)
 
-POST /api/users/create-trainer     payloads: firstName, lastName,email,password     Create a trainer profile
-
-POST api/classes/create-class      payloads: date,startTime,trainerId               cretae class and assign a trainer
-
-POST /api/users/trainer-profile    payloads:trainerId, updatedData                Update trainer profile
-
-GET /api/users/trainer-profile     payloads:trainerId                             Get trainer profile
+|POST /api/users/create-trainer    |  payloads: firstName, lastName,email,password   |  Create a trainer profile            |
+|----------------------------------|-------------------------------------------------|--------------------------------------|       
+|POST api/classes/create-class     | payloads: date,startTime,trainerId              |  cretae class and assign a trainer   | 
+|----------------------------------|-------------------------------------------------|--------------------------------------|
+|POST /api/users/trainer-profile   | payloads:trainerId, updatedData                 |  Update trainer profile              |
+|----------------------------------|-------------------------------------------------|--------------------------------------|
+|GET /api/users/trainer-profile    | payloads:trainerId                              |  Get trainer profile
 
 
 ## User(Trainer)
 
-GET /api/classes/schedules   payloads: trainerId               Get trainer shceduled classes
+GET /api/classes/schedules -------  payloads: trainerId       ---------        Get trainer shceduled classes
 
 ## User (Trainee)
 
-GET /api/users/profile      payloads:userId                         Get user profile
+GET /api/users/profile     --------   payloads:userId             -------            Get user profile
 
-GET /api/classes/available  payloads:                               Get available classes
+GET /api/classes/available -------- payloads:                      -------         Get available classes
 
-POST /api/users/profile     payloads:userId, updatedData            Update user profile
+POST /api/users/profile    -------- payloads:userId, updatedData   --------         Update user profile
 
-POST /api/bookings/book     payloads: userId, classId               User will book a class
+POST /api/bookings/book    -------- payloads: userId, classId      ---------         User will book a class
