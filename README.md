@@ -6,7 +6,7 @@ A RESTful API built with **TypeScript**, **Express.js**, **Prisma**, and **Postg
 
 ## 🚀 Live Link
 
-[https://your-vercel-project.vercel.app](https://your-vercel-project.vercel.app)
+[https://gym-management-system-tawny.vercel.app/](https://gym-management-system-tawny.vercel.app/)
 
 ---
 
@@ -31,11 +31,6 @@ This system is designed to manage gym operations, including user management (Adm
 | PostgreSQL   | Relational Database             |
 | JWT          | Authentication                  |
 | Vercel       | Deployment                      |
-
----
-
-## 🧩 Modular Folder Structure (MVC)
-
 
 
 ---

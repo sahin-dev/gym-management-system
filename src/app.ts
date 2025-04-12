@@ -21,7 +21,7 @@ app.use(limiter)
 
 app.get('/', (req:Request,res:Response)=>{
     res.setHeader("Content-Type", "text/html")
-    res.send("<h1>Api is working</h1>")
+    res.send("<h1>Api is working!!!</h1>")
 })
 app.use('/api',routes)
 
