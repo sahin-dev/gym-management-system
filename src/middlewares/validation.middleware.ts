@@ -1,6 +1,6 @@
 
 import { Request, Response,NextFunction } from 'express'
-import {AnyZodObject} from 'zod'
+import {AnyZodObject,ZodError,ZodIssue} from 'zod'
 import { ValidationError } from '../error/ValidationError'
 
 export const validate = (schema:AnyZodObject)=>{
@@ -12,8 +12,11 @@ export const validate = (schema:AnyZodObject)=>{
            
             next()
         }catch(err:any){
-            console.log(err)
-            next(err)
+           const details =  err.issues.map((issue: { path: any,message:any,code:any,validation:any })=> {
+            return {path:issue.path[0], message:issue.message}
+        })
+            
+            next(new ValidationError("Validation error",details[0].path,details[0].message))
         }
     }
 }

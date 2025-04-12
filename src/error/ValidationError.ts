@@ -9,7 +9,7 @@ export class ValidationError implements IError{
     statusCode: number;
     errorDetails: { field: string; message: string; };
 
-    constructor( message:string, field:string,details:string){
+    constructor( message:string,field:string,details:string){
         this.name = "Validation Error"
         this.success = false
         this.statusCode = 400
