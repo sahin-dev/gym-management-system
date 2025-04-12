@@ -63,11 +63,23 @@ npx prisma migrate dev --name init
 npx prisma generate
 
 npm run dev
-
-Email: admin@gym.com
-Password: Admin123!
+```
+## Admin credentials
+```bash
+Email: admin@email.com
+Password: admin123
+```
+## Trainer credentials
+```bash
+Email: trainer@email.com
+Password: trainer123
 ```
 
+## Trainee credentials
+```bash
+Email: trainee@email.com
+Password : trainee123
+```
 ## Auth
 
 |Method	Endpoint	         |   payloads                               |     Description       |
