@@ -11,16 +11,18 @@ export class ApiError implements IError{
         this.success = false
         this.message = message
         this.statusCode = statusCode
-        this.errorDetails = errorDetails
+        if (errorDetails)
+            this.errorDetails = errorDetails
     }
     
     convertToResponse(): ErrorResponse {
         
-        const errorResponse = {
+        const errorResponse:ErrorResponse = {
             success:this.success,
             message:this.message,
-            errorDetails:this.errorDetails
         }
+        if (this.errorDetails)
+            errorResponse.errorDetails = this.errorDetails
         return errorResponse
     }
     
