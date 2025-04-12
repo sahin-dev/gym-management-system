@@ -40,7 +40,7 @@ This system is designed to manage gym operations, including user management (Adm
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/gym-management-system.git
+git clone https://github.com/sahin-dev/gym-management-system.git
 cd gym-management-system
 
 npm install
