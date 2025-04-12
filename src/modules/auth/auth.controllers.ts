@@ -18,6 +18,7 @@ export const login = async (req:Request,res: Response,next:NextFunction) =>{
 
 export const register = async (req:Request, res:Response, next:NextFunction) => {
     const {firstName, lastName, email, password} = req.body
+    console.log(req.body)
     try{
         const registerData = await handleRegister({firstName,lastName,email,password})
         res.status(200).json({success:true,message:"User registered successfully", Data:registerData})

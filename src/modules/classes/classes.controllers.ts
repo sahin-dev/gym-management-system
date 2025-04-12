@@ -3,8 +3,8 @@ import { handleCreateClass, handleGetAvailableClass, handleGetTrainerClasses } f
 
 export const createClass = async(req:Request, res:Response, next:NextFunction)=>{
     try {
-        const {date,startTime,endTime,trainerId} = req.body
-        const createdClass = await handleCreateClass({date,startTime,endTime,trainerId})
+        const {date,startTime,trainerId} = req.body
+        const createdClass = await handleCreateClass({date,startTime,trainerId})
         res.status(201).json({success:true,statusCode:201,message:'Class created successfully', Data:createdClass})
     }catch(err){
         next(err)

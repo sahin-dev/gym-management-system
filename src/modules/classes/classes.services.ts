@@ -11,6 +11,7 @@ export const handleCreateClass = async ({date,startTime,trainerId}:ICreateClass)
     const scheduleDate = new Date(date)
     const start = new Date(`${scheduleDate}T${startTime}`)
     const end = new Date(start.getTime()+ 2*60*60*1000)
+    //Check number of classes created today
     const count = await getCount(scheduleDate)
 
     if (count >= LIMIT_CLASS_PER_DAY){

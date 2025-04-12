@@ -13,12 +13,12 @@ const limiter= rateLimit({
 })
 
 const app = express()
-
+app.use(express.json())
 //Add security related headers
 app.use(helmet())
 //Add a rate liiter to prevent DoS attacks
 app.use(limiter)
-app.use(express.json())
+
 app.get('/', (req:Request,res:Response)=>{
     res.setHeader("Content-Type", "text/html")
     res.send("<h1>Api is working</h1>")

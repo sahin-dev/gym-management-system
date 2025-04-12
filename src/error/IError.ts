@@ -1,6 +1,6 @@
 import { ErrorResponse } from "../types/ErrorResponse";
 
-interface IError{
+export default interface IError{
     success:boolean
     message:string
     statusCode:number
@@ -10,4 +10,3 @@ interface IError{
     
 }
 
-export default IError

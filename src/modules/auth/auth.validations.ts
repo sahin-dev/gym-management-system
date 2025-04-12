@@ -8,6 +8,6 @@ export const registrationSchema = z.object({
 })
 
 export const loginSchema = z.object({
-    email:z.string({required_error:"Email is required"}),
-    passwod:z.string({required_error:"Password is required"})
+    email: z.string().email("Invalid email formate"),
+    password: z.string().min(4, 'Password must be at least 4 characters long')
 })

@@ -14,6 +14,6 @@ export const handleBooking = async({userId,classId}:IBooking)=>{
     if (availableClass.bookings.length >= LIMIT_TRAINEE_PRE_CLASS){
         throw new ApiError(409, "Booking Limit Exceed")
     }
-    const booking =await prisma.booking.create({data:{classId,userId}})
+    const booking = await prisma.booking.create({data:{classId,userId}})
     return booking
 }

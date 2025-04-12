@@ -17,7 +17,7 @@ export const handleCreateTrainer = async ({firstName,lastName,email,password}:IC
 
 
 export const handleGetProfile = async (userId:string)=>{
-    const user = await prisma.user.findUnique({where:{id:userId}})
+    const user = await prisma.user.findUnique({where:{id:userId, role:"TRAINEE"}})
     if (!user){
         throw new ApiError(404, "User not found")
     }
@@ -25,6 +25,25 @@ export const handleGetProfile = async (userId:string)=>{
 }
 
 export const handleUpdateProfile = async (id:string,data:IUpdateProfile)=>{
-    const user = await prisma.user.update({where:{id},data})
+    const user = await prisma.user.update({where:{id, role:'TRAINEE'},data:{}})
+    if (!user){
+        throw new ApiError(404,"User not found")
+    }
     return user
+}
+
+export const handleGetTrainerProfile = async (trainerId:string)=>{
+    const trainer = await prisma.user.findUnique({where:{role:'TRAINER', id:trainerId}})
+    if (!trainer){
+        throw new ApiError(404,'Trainer not found' )
+    }
+    return trainer
+}
+
+export const handleTrainerProfileUpdate = async (trainerId:string,data:IUpdateProfile)=>{
+    const trainer = await prisma.user.update({where:{role:'TRAINER',id:trainerId}, data})
+    if (!trainer){
+        throw new ApiError(404, 'Trainer not found')
+    }
+    return trainer
 }

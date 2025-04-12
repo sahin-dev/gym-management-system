@@ -16,7 +16,7 @@ export const handleLogin = async({email,password}:ILoginUser)=>{
     }
 
     const token = jwt.sign({id:user.id,role:user.role}, process.env.JWT_SECRET as string, {expiresIn:'7d'})
-    return token
+    return {token,id:user.id,role:user.role,email:user.email}
 }
 
 export const handleRegister = async ({firstName, lastName,email,password}:IRegister)=>{

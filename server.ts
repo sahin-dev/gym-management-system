@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 8000
 
 const server = createServer(app)
 
-// server.listen(PORT, ()=>{
-//     console.log(`Server is listening on port: ${PORT}`)
-// })
+server.listen(PORT, ()=>{
+    console.log(`Server is listening on port: ${PORT}`)
+})
 
-export default app
+// export default app

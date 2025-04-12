@@ -36,9 +36,6 @@ model User {
 
 model Class {
   id          String   @id @default(uuid())
-  description String?
-  duration    Int      @default(120)
-  maxCapacity Int      @default(10)
   startTime   DateTime
   endTime     DateTime
   date        DateTime
@@ -57,7 +54,6 @@ model Booking {
   class       Class    @relation(fields: [classId], references: [id])
   classId     String
   bookingDate DateTime @default(now())
-  status      String   @default("confirmed")
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
