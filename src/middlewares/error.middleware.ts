@@ -1,4 +1,4 @@
-import IError from '../interfaces/IError'
+import IError from '../error/IError'
 
 import { Request, Response,NextFunction } from "express";
 

@@ -1,4 +1,4 @@
-import IError from "../interfaces/IError";
+import IError from "./IError";
 import { ErrorResponse } from "../types/ErrorResponse";
 
 
@@ -12,7 +12,7 @@ export class ValidationError implements IError{
     constructor( message:string, field:string,details:string){
         this.name = "Validation Error"
         this.success = false
-        this.statusCode = 403
+        this.statusCode = 400
         this.message = message
         this.errorDetails = {field,message:details}
     }

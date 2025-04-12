@@ -1,4 +1,4 @@
-import IError from "../interfaces/IError";
+import IError from "./IError";
 import { ErrorResponse } from "../types/ErrorResponse";
 
 

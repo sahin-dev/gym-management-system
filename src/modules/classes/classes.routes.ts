@@ -6,7 +6,7 @@ import { createClass, getAvailableClasses, getTrainerClasses } from "./classes.c
 const router = Router();
 
 router.post('/create', authenticate,authorize(['ADMIN']), createClass)
-router.get('/classes',authenticate, authorize(['TRAINER']),getTrainerClasses)
+router.get('/schedules',authenticate, authorize(['TRAINER']),getTrainerClasses)
 router.get('/available',authenticate,authorize(['TRAINEE']), getAvailableClasses)
 
 export default router;

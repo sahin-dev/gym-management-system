@@ -5,8 +5,8 @@
   "main": "server.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev":"ts-node-dev server.ts",
-    "build":"prisma generate && tsc",
+    "dev": "ts-node-dev server.ts",
+    "build": "prisma generate && tsc",
     "start": "ts-node server.ts"
   },
   "keywords": [],
@@ -30,6 +30,9 @@
     "date-fns": "^4.1.0",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
-    "jsonwebtoken": "^9.0.2"
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "zod": "^3.24.2"
   }
 }
